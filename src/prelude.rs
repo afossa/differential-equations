@@ -32,6 +32,7 @@
 //! | BackwardDifferentiationFormula|  X  |     |     |     |     |
 //! | AdamsPredictorCorrector       |  X  |     |     |     |     |
 //! | Shooting                      |     |  X  |     |     |     |
+//! | MethodOfLines                 |  X  |     |     |     |     |
 //!
 //! - `X` = Supported
 //! - `(X)` = Supported for fixed step only (e.g., Euler, RK4)
@@ -55,7 +56,17 @@ pub use crate::ivp::IVP;
 pub use crate::bvp::Boundary;
 pub use crate::dae::DAE;
 pub use crate::dde::DDE;
-pub use crate::ode::ODE;
+pub use crate::ode::{
+    Hamiltonian, HamiltonianFnWrapper, HamiltonianSystem, ODE,
+    sensitivity::{AdjointOde, ForwardSensitivityOde, ParametrizedODE, ParametrizedOdeFnWrapper},
+};
+pub use crate::pde::{
+    BoundaryCondition, BoundaryConditions, BoundaryConditionsBuilder,
+    BoundaryConditionsBuilderError, BoundaryFace, FiniteVolume, Limiter, MethodOfLines,
+    NumericalFlux, PDE, PdeFnWrapper, ProjectionMethod, ProjectionSemiDiscrete, Reconstruction,
+    SemiDiscretePde, SemiDiscreteYee, Side, SpatialDiscretization, SpatialScheme, StructuredGrid,
+    YeeGrid, YeeLayout, ZeroSource, pde_from_fn, pde_from_fn_flux,
+};
 pub use crate::sde::SDE;
 
 // Output, Events, and Solution Types

@@ -19,13 +19,12 @@ include = [
     "src/**/*",
     "docs/**/*",
     "examples/**/*",
+    "tests/**/*",
+    "benches/**/*",
     "assets/*",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
-]
-exclude = [
-    "examples/**/target/*",
 ]
 
 [features]
@@ -72,6 +71,10 @@ required-features = ["nalgebra"]
 [[test]]
 name = "bvp"
 path = "tests/bvp/main.rs"
+
+[[test]]
+name = "pde"
+path = "tests/pde/main.rs"
 
 # Ordinary Differential Equation (ODE) examples
 [[example]]
@@ -189,9 +192,30 @@ path = "examples/dde/01_mackey_glass/main.rs"
 name = "dde_02_breast_cancer_model"
 path = "examples/dde/02_breast_cancer_model/main.rs"
 
+# Partial Differential Equation (PDE) examples
+[[example]]
+name = "pde_01_heat_equation"
+path = "examples/pde/01_heat_equation/main.rs"
+
+[[example]]
+name = "pde_02_finite_volume_advection"
+path = "examples/pde/02_finite_volume_advection/main.rs"
+
+[[example]]
+name = "pde_03_maxwell_yee"
+path = "examples/pde/03_maxwell_yee/main.rs"
+
+[[example]]
+name = "pde_04_incompressible_navier_stokes"
+path = "examples/pde/04_incompressible_navier_stokes/main.rs"
+
 # Benchmarks
 [[bench]]
 name = "ode_solver_benchmarks"
 harness = false
 path = "benches/main.rs"
 required-features = ["nalgebra"]
+
+[[example]]
+name = "ode_19_orbital_mechanics_energy_conservation"
+path = "examples/ode/19_orbital_mechanics_energy_conservation/main.rs"
