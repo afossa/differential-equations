@@ -21,5 +21,5 @@ proc-macro2 = "1.0.106"
 
 [dev-dependencies]
 differential-equations = { path = ".." }
-nalgebra = "0.34.2"
+nalgebra = "0.35"
 num-complex = "0.4.6"
